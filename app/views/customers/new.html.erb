@@ -1,0 +1,33 @@
+<h1>New Customer</h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:
+      </h2>
+      <ul>
+        <% @customer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :business_name %><br>
+    <%= form.text_field :business_name %>
+  </p>
+ 
+  <p>
+    <%= form.label :active_cust %><br>
+    <%= form.text_area :active_cust %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', customers_path %>

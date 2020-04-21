@@ -1,0 +1,22 @@
+<h1>Customers</h1>
+
+<%= link_to 'New customer', new_customer_path %>
+
+<p>
+</p>
+
+<table>
+  <tr>
+    <th>Business Name</th>
+    <th>Active_client</th>
+    <th></th>
+  </tr>
+ 
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.business_name %></td>
+      <td><%= customer.active_cust %></td>
+      <td><%= link_to 'Show', customer_path(customer) %></td>
+    </tr>
+  <% end %>
+</table>
