@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  business_name: MyString
-  active_cust: MyString
+bad_cust:
+  business_name: 'ABC'
+  active_cust: FALSE  
 
-two:
-  business_name: MyString
-  active_cust: MyString
+good_cust:
+  business_name: 'Valid Customer'
+  active_cust: TRUE
